@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link type="text/css" href="pixel.css" rel="stylesheet">
+  <!--
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  -->
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script src="pixel-filter.js"></script>
+  <script src="pixel-component.js"></script>
+  <script src="pixel-composer.js"></script>
+  <script src="pixel-main_common.js"></script>
+  <script>
+    const composer = new Composer();
+
+    const in1 = composer.makeSource(input1);
+
+    const out1_1 = composer.addFilter(in1, right);
+    const out1_2 = composer.addFilter(in1, left);
+    const out1_3 = composer.addFilter(in1, up);
+    const out1_4 = composer.addFilter(in1, down);
+
+    const out2_1 = composer.addFilter2(out1_1, out1_2, and);
+    const out2_2 = composer.addFilter2(out1_3, out1_4, and);
+
+    const out3 = composer.addFilter2(out2_1, out2_2, and);
+
+    const out4 = composer.addFilter(out3, complement);
+
+    const out5 = composer.addFilter2(in1, out4, and);
+
+    const world = out5.component;
+
+    const domContainer = document.querySelector('#container');
+    ReactDOM.render(world, domContainer);
+
+    composer.store.start();
+  </script>
+</body>
+</html>

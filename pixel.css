@@ -1,0 +1,102 @@
+/* Pixel */
+
+.pixel {
+  display: inline-block;
+  width:  6px;
+  height: 6px;
+  border: 1px solid #808080;
+}
+
+.pixel-black {
+  background-color: black;
+}
+
+.pixel-white {
+  background-color: white;
+}
+
+/* PixelLine */
+
+.pixel-line {
+  line-height: 0;
+}
+
+/* Figure */
+
+.figure {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Filter */
+
+.filter-wrapper {
+  display: inline-block;
+}
+
+.filter {
+  display: inline-block;
+  border:  1px solid #000;
+  padding: 4px;
+  min-width: 64px;
+  text-align: center;
+}
+
+.filter-before {
+  display: inline-block;
+  width: 32px;
+  position: relative;
+  top: -2px;
+  border:  1px solid #000;
+}
+
+.filter-after {
+  display: inline-block;
+  width: 32px;
+  position: relative;
+  top: -2px;
+  border:  1px solid #000;
+}
+
+/* Filter2 */
+
+.filter2-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  height: 210px;
+}
+
+.filter2 {
+  vertical-align: middle;
+  display: inline-block;
+  border:  1px solid #000;
+  padding: 90px 4px;
+}
+
+.filter2-before {
+  vertical-align: middle;
+  display: inline-block;
+  width: 32px;
+  height: 140px;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.filter2-after {
+  vertical-align: middle;
+  display: inline-block;
+  width: 32px;
+  border: 1px solid #000;
+}
+
+/* VerticalLayout */
+
+.vertical-layout {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.vertical-layout-child {
+  margin: 4px 0;
+  text-align: right;
+}
